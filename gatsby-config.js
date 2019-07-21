@@ -1,34 +1,48 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Sean Madrid`,
+    subtitle: `Developer & UX Designer`,
+    description: `Implementing big picture ideas, technical solutions, and a sense of style to web-based projects`,
+    author: `Sean Madrid`,
+    menuLinks:[
+      {
+         name:'work',
+         link:'/work'
+      },
+      {
+         name:'about',
+         link:'/about'
+      },
+      {
+         name:'resume',
+         link:'/resume'
+      },
+      {
+         name:'contact',
+         link:'/contact'
+      },
+    ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-wordpress`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        baseUrl: `content.seanmadrid.com`,
+        protocol: `https`, 
+        hostingWPCOM: false,
+        useACF: true,
+        verboseOutput: true,
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-transition-link",
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+          layout: require.resolve(`./src/layouts/index.js`)
+        }
+   }
   ],
 }

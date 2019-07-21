@@ -1,0 +1,88 @@
+.single-project-wrap {
+	position: relative;
+	float: left;
+	display: block;
+	margin: 10rem 0 10rem 50%;
+	transform: translateX(-50%);
+	pointer-events: all;
+	z-index: 999;
+	@extend .cc-xl;
+	h1 {
+		text-align: center;
+	}
+	.work-buttons {
+		width: auto;
+		float: left;
+		margin-left: 50%;
+		transform: translateX(-50%);
+		&:last-of-type {
+			margin-top: 2rem;
+		}
+	}
+
+}
+
+.project-content {
+	@extend .body-text;
+	pointer-events: all;
+	position: relative;
+	float: left;
+	> div {
+		position: relative;
+		float: left;
+		width: 100%;
+	}
+	a {
+		text-decoration: none;
+		transition: all .25s;
+		color: $c-blue;
+		border-bottom: solid 1px $c-blue;
+		&:hover {
+			color: $c-darkgreen;
+			border-color: $c-darkgreen;
+		}
+	}
+	figure {
+		position: relative;
+		float: left;
+		width: 100%;
+		margin: 2rem 0;
+		img {
+			display: block;
+			float: left;
+			margin-left: 50%;
+			transform: translateX(-50%);
+			max-width: 100%;
+		}
+	}
+	
+	h3, h4, p, figcaption {
+		width: 100%;
+		position: relative;
+		float: left;
+		display: block;
+		margin: 1rem 0;
+		@extend .clear;
+	}
+
+	figcaption {
+		text-align: center;
+		font-style: italic;
+	}
+
+	h3 {
+		@extend .m_m;
+		font-family: $ff-header;
+	}
+	h4 {
+		@extend .sm_m;
+		font-family: $ff-header;
+	}
+	figure.wp-block-image {
+		@extend .clear;
+		float: left;
+		img {
+			box-shadow: $ts-primary;
+		}
+	}
+}
