@@ -8,7 +8,7 @@ import VantaWaves from "../components/waves"
 const TemplateWrapper = ({ children, location }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Sean Madrid: Developer / UX Designer"
       meta={[
         { name: `description`, content: `Sample` },
         { name: `keywords`, content: `sample, something` },

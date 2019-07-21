@@ -4,7 +4,8 @@ import WorkButtons from '../components/work-buttons'
 
 class SingleProject extends React.Component {
   render() {
-    const project = this.props.pageResources.json.data.wordpressWpWorks;
+
+    const project = this.props.data.wordpressWpWorks;
 
     let view_link;
     let code_link;
@@ -23,11 +24,11 @@ class SingleProject extends React.Component {
 
     return (
       <div className="single-project-wrap">
-      <h1 className="header-l">{project.title}</h1>
-      <WorkButtons viewLink={view_link} codeLink={code_link} storyLink="" />
-      <div className="project-content" dangerouslySetInnerHTML={{__html: project.content}}></div>
-      <WorkButtons viewLink={view_link} codeLink={code_link} storyLink="" />
-    </div>
+        <h1 className="header-l">{project.title}</h1>
+        <WorkButtons viewLink={view_link} codeLink={code_link} storyLink="" />
+        <div className="project-content" dangerouslySetInnerHTML={{__html: project.content}}></div>
+        <WorkButtons viewLink={view_link} codeLink={code_link} storyLink="" />
+      </div>
     );
   }
 }
@@ -39,7 +40,7 @@ SingleProject.propTypes = {
 
 export default SingleProject
 
-export const singWorkQuery = graphql `
+export const pageQuery = graphql `
   query currentProjectQuery($id: String!) {
     wordpressWpWorks(id: { eq: $id }) {
       id
