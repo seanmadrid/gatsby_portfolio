@@ -9,7 +9,6 @@ const ResumePage = () => (
   <div>
     <SEO title="Sean Madrid's Resume" />
 	<div className="resume">
-		<h1 className="header-l">My Resume</h1>
 		<a href={resumeURL} target="_blank" rel="noopener noreferrer" >
 			<img src={ResumeImg} alt="Sean Madrid's Resume" />
 		</a>

@@ -2,7 +2,7 @@
 import React from "react"
 import Logo from "../images/sean_logo.png"
 import { Link } from 'gatsby'
- 
+
 class MobileMenu extends React.Component {
   
   constructor() {
@@ -30,11 +30,14 @@ class MobileMenu extends React.Component {
     return (
       <div>
         <div className={`mobile-menu ${this.state.opened}`} onChange={this.closeMenu}>
+            <div className="logo-wrap">
+              <Link to="/" onClick={this.closeMenu} className="mobile-home-link"><img src={Logo} alt="Sean Madrid's Logo" /></Link>
+            </div>
             <div className="mobile-menu-wrap">
-              <Link to="/work" className="work-link" onClick>Work</Link>
-              <Link to="/about" className="about-link" onClick>About</Link>
-              <Link to="/resume" className="resume-link" onClick>Resume</Link>
-              <Link to="/contact" className="contact-link" onClick>Contact</Link>
+              <Link to="/work" className="work-link" onClick={this.closeMenu}>Work</Link>
+              <Link to="/about" className="about-link" onClick={this.closeMenu}>About</Link>
+              <Link to="/cv" className="resume-link" onClick={this.closeMenu}>CV</Link>
+              <Link to="/contact" className="contact-link" onClick={this.closeMenu}>Contact</Link>
             </div>
             <div className="close" onClick={this.closeMenu}>×</div>
         </div>
@@ -52,7 +55,7 @@ class DesktopMenu extends React.Component {
         <div className="menu">
           <Link to="/work" className="work-link">Work</Link>
           <Link to="/about" className="about-link">About</Link>
-          <Link to="/resume" className="resume-link">Resume</Link>
+          <Link to="/cv" className="resume-link">CV</Link>
           <Link to="/contact" className="contact-link">Contact</Link>
         </div>
       </div>

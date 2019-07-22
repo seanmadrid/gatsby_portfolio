@@ -6,6 +6,7 @@
 	transform: translateX(-50%);
 	pointer-events: all;
 	z-index: 999;
+	padding-right: 1.5rem;
 	@extend .cc-xl;
 	h1 {
 		text-align: center;
@@ -19,7 +20,9 @@
 			margin-top: 2rem;
 		}
 	}
-
+	@media only screen and (min-width:$bp-800) {
+		padding-right: 0;
+	}
 }
 
 .project-content {

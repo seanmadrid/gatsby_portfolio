@@ -5,12 +5,11 @@ class WorkButtons extends React.Component {
     const thiser = this;
     return(
       <div className="work-buttons">
+        {thiser.props.viewLink !== "" && <a href={thiser.props.viewLink} className="work-button link" target="_blank" rel="noopener noreferrer"><span className="hover-label">View Site</span></a>}
 
-        {thiser.props.viewLink !== "" && <a href={thiser.props.viewLink} className="work-button" target="_blank" rel="noopener noreferrer">View Site</a>}
+        {thiser.props.codeLink !== "" && <a href={thiser.props.codeLink} className="work-button code" target="_blank" rel="noopener noreferrer"><span className="hover-label">See Code</span></a>}
 
-        {thiser.props.codeLink !== "" && <a href={thiser.props.codeLink} className="work-button code" target="_blank" rel="noopener noreferrer">See Code</a>}
-
-        {thiser.props.storyLink !== "" && <a href={thiser.props.storyLink} className="work-button">Read Story</a>}
+        {thiser.props.storyLink !== "" && <a href={thiser.props.storyLink} className="work-button story"><span className="hover-label">Read Story</span></a>}
       </div>
     );
   }
